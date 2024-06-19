@@ -2,10 +2,13 @@ cantidadparacetamol=0
 cantidadtapsin=0
 cantidadvitaminac=0
 cantidadnastizol=0
+cantidadibuprofeno=0
 paracetamol=2490
 tapsin=4990
 vitaminaC=990
 nastizol=6690
+ibuprofeno=2500
+
 
 while True:
     print("""
@@ -16,11 +19,12 @@ while True:
         2.- Tapsin $4990
         3.- Vitamina C $990
         4.- Nastizol $6690
-        5.- Salir
+        5.- Ibuprofeno $2500
+        6.- Salir
         """)
     try:
         opciones = int(input("¿Que medicamento necesita?: "))
-        if opciones >= 1 and opciones <=5:
+        if opciones >= 1 and opciones <=6:
             if opciones == 1:   #ESCOGE EL PARACETAMOL
                 cantidadparacetamol+=1
                 print("Has agregado 1 Paracetamol")
@@ -33,7 +37,9 @@ while True:
             elif opciones == 4:   #ESCOGE EL NASTIZOL
                 cantidadnastizol+=1
                 print("Has agregado 1 Nastizol")
-            elif opciones == 5:   #PROCEDE A SALIR DEL MENÚ PARA MOSTRAR LA CANTIDAD DE CADA MEDICAMENTO, EL TOTAL DE LA COMPRA Y EL IVA
+            elif opciones == 5:
+                cantidadibuprofeno+=1
+            elif opciones == 6:   #PROCEDE A SALIR DEL MENÚ PARA MOSTRAR LA CANTIDAD DE CADA MEDICAMENTO, EL TOTAL DE LA COMPRA Y EL IVA
                 subtotal = (paracetamol*cantidadparacetamol)+(tapsin*cantidadtapsin)+(vitaminaC*cantidadvitaminac)+(nastizol*cantidadnastizol)
                 iva=0.19*subtotal
                 print(f"""
